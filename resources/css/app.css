@@ -1,0 +1,16 @@
+/* <uniquifier>: Use a unique and descriptive class name */
+/* <weight>: Use a value from (200-1000)->Mulish (100 to 900)->Montserrat */
+
+.mulish-<uniquifier > {
+    font-family: "Mulish", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
+
+.montserrat-<uniquifier > {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
