@@ -30,11 +30,69 @@
 
 <body>
 
-    <div>
-        Newsletter
+    <div class="font-montserrat bg-dark-kirk text-shadowed py-2.5 md:py-1.5 shadow-hover">
+        <div class=" hidden md:flex w-[80%] mx-auto justify-between items-center">
+
+            <div class="flex space-x-[60px] items-center">
+                <div class="uppercase font-medium text-2xl">newsletter</div>
+                <div class="border border-2 py-1 pl-3 pr-[100px] uppercase text-sm rounded-2xl">search</div>
+            </div>
+
+            <div class="flex space-x-8">
+                <div>en/mkd</div>
+                <div>E-Shop</div>
+            </div>
+        </div>
     </div>
 
-    <nav>Nav</nav>
+    <nav class="bg-orange py-2 relative z-20">
+        <div class="w-[80%] mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <div class="w-[3.5rem] h-[3.5rem] md:w-[4.2rem] md:h-[4.2rem]">
+                <a href="/" draggable="false">
+                    <img draggable="false" src="{{ Vite::asset('resources/CyaKrik-Resources/krik-logo.png') }}"
+                        alt="Logo">
+                </a>
+            </div>
+
+            {{-- Hamburger Lines --}}
+            <div class="md:hidden z-30">
+                <button id="hamburger" class="relative w-6 h-5 flex flex-col justify-between items-center"
+                    aria-label="Toggle menu">
+                    <span
+                        class="block w-full h-1 bg-dark-kirk rounded-xl transition-all duration-300 ease-in-out"></span>
+                    <span
+                        class="block w-full h-1 bg-dark-kirk rounded-xl transition-all duration-300 ease-in-out"></span>
+                    <span
+                        class="block w-full h-1 bg-dark-kirk rounded-xl transition-all duration-300 ease-in-out"></span>
+                </button>
+            </div>
+
+            <!-- Nav Links-->
+            <div id="nav-links" class="hidden md:flex space-x-3 items-center">
+                <x-nav-link href="/">За нас</x-nav-link>
+                <x-nav-link href="#">Услуги</x-nav-link>
+                <x-nav-link href="#">Проекти</x-nav-link>
+                <x-nav-link href="#">Контакт</x-nav-link>
+                <a href="#"
+                    class="text-font bg-dark-kirk hover:bg-purple py-2 text-[16px] font-normal rounded-2xl border-2 border-orange px-3">Донирај</a>
+            </div>
+        </div>
+
+        <!-- Nav Links / Hamburger Menu Display -->
+        <div id="mobile-menu"
+            class="fixed top-[90px] right-0 w-[75%] h-screen bg-orange transform translate-x-full transition-transform duration-500 ease-in-out md:hidden z-10">
+            <div class="flex flex-col items-start p-5 space-y-4">
+                <x-nav-link href="/">За нас</x-nav-link>
+                <x-nav-link href="#">Услуги</x-nav-link>
+                <x-nav-link href="#">Проекти</x-nav-link>
+                <x-nav-link href="#">Контакт</x-nav-link>
+                <a href="#"
+                    class="text-font bg-dark-kirk hover:bg-purple py-2 text-[16px] font-normal rounded-2xl border-2 border-orange px-3">Донирај</a>
+            </div>
+        </div>
+    </nav>
+
 
     <main>
         {{ $slot }}

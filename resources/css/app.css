@@ -1,5 +1,9 @@
-/* <uniquifier>: Use a unique and descriptive class name */
-/* <weight>: Use a value from (200-1000)->Mulish (100 to 900)->Montserrat */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* <uniquifier>: Use a unique and descriptive class name
+/* <weight>: Use a value from (200-1000)->Mulish (100 to 900)->Montserrat
 
 .mulish-<uniquifier > {
     font-family: "Mulish", sans-serif;
@@ -8,9 +12,22 @@
     font-style: normal;
 }
 
-.montserrat-<uniquifier > {
+.montserrat-medium {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
+    font-weight: 500;
     font-style: normal;
+}
+
+*/
+
+/* Transform the hamburger lines to form an "X" */
+.hamburger-open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-3px, 6px);
+}
+.hamburger-open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -9px);
 }
