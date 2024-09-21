@@ -27,4 +27,6 @@ class VolunteerController extends Controller
 
         return view('volunteer.show', compact('volunteer'));
     }
+
+
 }

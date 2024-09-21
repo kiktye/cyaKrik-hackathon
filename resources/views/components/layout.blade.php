@@ -87,7 +87,7 @@
                         class="absolute right-0 w-full bg-dark-krik shadow-lg z-50 rounded-b-2xl text-center">
                         <x-about-link> За Крик </x-about-link>
                         <x-about-link> Нашиот Тим </x-about-link>
-                        <x-about-link> Волонтери </x-about-link>
+                        <x-about-link href="{{ route('volunteer.index') }}"> Волонтери </x-about-link>
                         <x-about-link> Архива </x-about-link>
                     </div>
                 </div>
@@ -104,7 +104,27 @@
         <div id="mobile-menu"
             class="fixed top-[90px] right-0 w-[75%] h-screen bg-orange transform translate-x-full transition-transform duration-500 ease-in-out md:hidden z-10">
             <div class="flex flex-col items-start p-5 space-y-4">
-                <x-nav-link href="/">За нас</x-nav-link>
+                <div x-data="{ open: false, timeout: null }" class="relative cursor-pointer group">
+                    <!-- Button that toggles dropdown -->
+                    <div @click="open = !open" @mouseenter="clearTimeout(timeout)"
+                        @mouseleave="timeout = setTimeout(() => open = false, 10)"
+                        class="text-black text-xl font-semibold border-2 border-orange px-3 group-hover:border-black group-hover:text-white group"
+                        :class="open ? 'bg-dark-krik text-white rounded-t-2xl' : 'text-dark-krik rounded-2xl'">
+                        За нас
+                        <i :class="open ? 'text-white' : 'text-black'"
+                            class="inline block fa-solid fa-chevron-down text-sm"></i>
+                    </div>
+
+                    <!-- Dropdown links -->
+                    <div x-show="open" @mouseleave="open = false" @mouseenter="clearTimeout(timeout)"
+                        @mouseleave="timeout = setTimeout(() => open = false, 10)"
+                        class="absolute right-0 w-full bg-dark-krik shadow-lg z-50 rounded-b-2xl text-center">
+                        <x-about-link> За Крик </x-about-link>
+                        <x-about-link> Нашиот Тим </x-about-link>
+                        <x-about-link href="{{ route('volunteer.index') }}"> Волонтери </x-about-link>
+                        <x-about-link> Архива </x-about-link>
+                    </div>
+                </div>
                 <x-nav-link href="#">Услуги</x-nav-link>
                 <x-nav-link href="#">Проекти</x-nav-link>
                 <x-nav-link href="#">Контакт</x-nav-link>

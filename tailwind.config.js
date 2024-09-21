@@ -16,8 +16,9 @@ export default {
                 orange: "#f8ac2e",
                 why: "#b8afda",
             },
-            backgroundColor: {
-                purple: "#b8afda",
+            backgroundImage: {
+                heroSection:
+                    "url(resources/CyaKrik-Resources/Homepage/herosection.jpg)",
             },
             fontFamily: {
                 mulish: ["Mulish", "sans-serif"],

@@ -15,7 +15,7 @@ use App\Http\Controllers\VolunteerController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 });
 
 // Volunteers Controllers
