@@ -15,8 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('status'); // 'in_progress' or 'completed'
-            $table->text('description');
             $table->string('image_url')->nullable();
+            $table->text('description')->nullable();
+            $table->string('goal')->nullable();
+            $table->string('audience')->nullable();
+            $table->integer('progress')->default(0); // Progress as a percentage
             $table->timestamps();
         });
     }

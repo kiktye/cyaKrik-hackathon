@@ -20,10 +20,13 @@ class ProjectFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->words(3, true), // Random project names
-            'status' => $this->faker->randomElement(['in_progress', 'completed']),
-            'description' => $this->faker->paragraphs(2, true), // Project description
-            'image_url' => '/images/projects/' . $this->faker->word . '.jpg', // Dummy image path
+            'name' => $this->faker->sentence(3), // Generate a fake project name
+            'status' => $this->faker->randomElement(['in_progress', 'completed']), // Random status
+            'image_url' => $this->faker->imageUrl(640, 480, 'business', true), // Fake image URL
+            'description' => $this->faker->paragraph(), // Fake project description
+            'goal' => $this->faker->sentence(10), // Fake project goal
+            'audience' => $this->faker->sentence(5), // Fake target audience
+            'progress' => $this->faker->numberBetween(0, 100), // Progress between 0-100%
         ];
     }
 }

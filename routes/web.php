@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VolunteerController;
+use App\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,10 @@ Route::get('volunteer/index', [VolunteerController::class, 'index'])->name('volu
 Route::get('/volunteer/{id}', [VolunteerController::class, 'show'])->name('volunteer.show');
 
 // Volunteers Controllers
+
+// Project Controllers 
+
+Route::get('/project', [ProjectController::class, 'index'])->name('projects.index');
+Route::get('/project/{id}', [ProjectController::class, 'show'])->name('project.show');
+
+// Project Controllers
