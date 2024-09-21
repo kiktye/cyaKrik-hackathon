@@ -8,7 +8,7 @@ export default {
     theme: {
         extend: {
             colors: {
-                "dark-kirk": "#191919",
+                "dark-krik": "#191919",
                 font: "#ffffff",
                 shadowed: "rgb(222, 222, 222)",
                 border: "rgba(255, 255, 255, 0.04)",
