@@ -97,6 +97,9 @@
     <main>
         {{ $slot }}
     </main>
+
+
+    <x-footer /> {{-- Include the footer component here --}}
 </body>
 
 </html>
