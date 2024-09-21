@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Project;
+use App\Models\Volunteer;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +14,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        // Create 10 fake projects
+        $projects = Project::factory()->count(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        // Create 10 fake volunteers and associate them with random projects
+        Volunteer::factory()->count(10)->create()->each(function ($volunteer) use ($projects) {
+            // Attach each volunteer to 2-3 random projects
+            $volunteer->projects()->attach(
+                $projects->random(rand(2, 3))->pluck('id')->toArray()
+            );
+        });
     }
 }
