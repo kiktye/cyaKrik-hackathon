@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // Create 10 fake projects
-        $projects = Project::factory()->count(10)->create();
+        $projects = Project::factory()->count(20)->create();
 
         // Create 12 fake volunteers and associate them with random projects
         Volunteer::factory()->count(12)->create()->each(function ($volunteer) use ($projects) {
@@ -24,5 +24,12 @@ class DatabaseSeeder extends Seeder
                 $projects->random(rand(2, 3))->pluck('id')->toArray()
             );
         });
+
+        // Call the AboutUsSeeder
+        $this->call(AboutUsSeeder::class);
+
+        // Call the FaqSeeder
+        $this->call(FaqSeeder::class);
+
     }
 }
