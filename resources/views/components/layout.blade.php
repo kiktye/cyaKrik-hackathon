@@ -28,7 +28,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
+<body class="flex flex-col min-h-screen">
 
     <div class="font-montserrat bg-dark-krik text-shadowed py-2.5 md:py-1.5 shadow-hover">
         <div class=" hidden md:flex w-[80%] mx-auto justify-between items-center">
@@ -109,16 +109,17 @@
                 <x-nav-link href="#">Проекти</x-nav-link>
                 <x-nav-link href="#">Контакт</x-nav-link>
                 <a href="#"
-                    class="text-font bg-dark-krik hover:bg-purple py-2 text-[16px] font-normal rounded-2xl border-2 border-orange px-3">Донирај</a>
+                    class="text-font bg-dark-krik hover:bg-purple shadow-custom text-[16px] font-normal rounded-3xl border-2 border-orange px-3">Донирај</a>
             </div>
         </div>
     </nav>
 
 
-    <main>
+    <main class="flex-grow">
         {{ $slot }}
     </main>
 
+    <x-footer />
     <script src="//unpkg.com/alpinejs" defer></script>
 </body>
 

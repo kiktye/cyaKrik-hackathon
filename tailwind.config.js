@@ -32,7 +32,7 @@ export default {
                 "2xs": ".655rem",
             },
             borderRadius: {
-                lg2: "1.5rem",
+                lg2: "3.3rem",
             },
             dropShadow: {
                 custom: "5px 5px 60px rgba(0, 0, 0, 1);",
