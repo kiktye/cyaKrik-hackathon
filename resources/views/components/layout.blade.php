@@ -121,6 +121,7 @@
 
     <x-footer />
     <script src="//unpkg.com/alpinejs" defer></script>
+    {{ $scripts ?? '' }}
 </body>
 
 </html>

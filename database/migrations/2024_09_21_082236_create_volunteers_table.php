@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('age');
             $table->string('birth_place');
-            $table->text('experience')->nullable();
+            $table->text('biography')->nullable();
             $table->string('image_url')->nullable();
+            $table->enum('volunteer_type', ['long_term', 'short_term'])->default('long_term'); // To differentiate between long and short term
             $table->timestamps();
         });
     }

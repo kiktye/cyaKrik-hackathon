@@ -19,6 +19,8 @@ Route::get('/', function () {
 });
 
 // Volunteers Controllers
-Route::get('/volunteers', [VolunteerController::class, 'index']);
+Route::get('volunteer/index', [VolunteerController::class, 'index'])->name('volunteer.index');
+
+Route::get('/volunteer/{id}', [VolunteerController::class, 'show'])->name('volunteer.show');
 
 // Volunteers Controllers

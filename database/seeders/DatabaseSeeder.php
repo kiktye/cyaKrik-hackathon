@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         $projects = Project::factory()->count(10)->create();
 
         // Create 10 fake volunteers and associate them with random projects
-        Volunteer::factory()->count(10)->create()->each(function ($volunteer) use ($projects) {
+        Volunteer::factory()->count(12)->create()->each(function ($volunteer) use ($projects) {
             // Attach each volunteer to 2-3 random projects
             $volunteer->projects()->attach(
                 $projects->random(rand(2, 3))->pluck('id')->toArray()

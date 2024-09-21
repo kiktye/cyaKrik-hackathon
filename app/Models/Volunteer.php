@@ -18,8 +18,9 @@ class Volunteer extends Model
         'name',
         'age',
         'birth_place',
-        'experience',
-        'image_url'
+        'biography',
+        'image_url',
+        'volunteer_type'
     ];
 
     /**
