@@ -8,7 +8,7 @@ export default {
     theme: {
         extend: {
             colors: {
-                "dark-kirk": "#191919",
+                "dark-krik": "#191919",
                 font: "#ffffff",
                 shadowed: "rgb(222, 222, 222)",
                 border: "rgba(255, 255, 255, 0.04)",
@@ -32,7 +32,7 @@ export default {
                 "2xs": ".655rem",
             },
             borderRadius: {
-                lg2: "1.5rem",
+                lg2: "3.3rem",
             },
             dropShadow: {
                 custom: "5px 5px 60px rgba(0, 0, 0, 1);",

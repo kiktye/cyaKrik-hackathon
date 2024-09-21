@@ -28,9 +28,9 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
+<body class="flex flex-col min-h-screen">
 
-    <div class="font-montserrat bg-dark-kirk text-shadowed py-2.5 md:py-1.5 shadow-hover">
+    <div class="font-montserrat bg-dark-krik text-shadowed py-2.5 md:py-1.5 shadow-hover">
         <div class=" hidden md:flex w-[80%] mx-auto justify-between items-center">
 
             <div class="flex space-x-[60px] items-center">
@@ -60,22 +60,43 @@
                 <button id="hamburger" class="relative w-6 h-5 flex flex-col justify-between items-center"
                     aria-label="Toggle menu">
                     <span
-                        class="block w-full h-1 bg-dark-kirk rounded-xl transition-all duration-300 ease-in-out"></span>
+                        class="block w-full h-1 bg-dark-krik rounded-xl transition-all duration-300 ease-in-out"></span>
                     <span
-                        class="block w-full h-1 bg-dark-kirk rounded-xl transition-all duration-300 ease-in-out"></span>
+                        class="block w-full h-1 bg-dark-krik rounded-xl transition-all duration-300 ease-in-out"></span>
                     <span
-                        class="block w-full h-1 bg-dark-kirk rounded-xl transition-all duration-300 ease-in-out"></span>
+                        class="block w-full h-1 bg-dark-krik rounded-xl transition-all duration-300 ease-in-out"></span>
                 </button>
             </div>
 
             <!-- Nav Links-->
             <div id="nav-links" class="hidden md:flex space-x-3 items-center">
-                <x-nav-link href="/">За нас</x-nav-link>
+                <div x-data="{ open: false, timeout: null }" class="relative cursor-pointer group">
+                    <!-- Button that toggles dropdown -->
+                    <div @click="open = !open" @mouseenter="clearTimeout(timeout)"
+                        @mouseleave="timeout = setTimeout(() => open = false, 10)"
+                        class="text-black text-xl font-semibold border-2 border-orange px-3 group-hover:border-black group-hover:text-white group"
+                        :class="open ? 'bg-dark-krik text-white rounded-t-2xl' : 'text-dark-krik rounded-2xl'">
+                        За нас
+                        <i :class="open ? 'text-white' : 'text-black'"
+                            class="hidden group-hover:inline-block fa-solid fa-chevron-down text-sm"></i>
+                    </div>
+
+                    <!-- Dropdown links -->
+                    <div x-show="open" @mouseleave="open = false" @mouseenter="clearTimeout(timeout)"
+                        @mouseleave="timeout = setTimeout(() => open = false, 10)"
+                        class="absolute right-0 w-full bg-dark-krik shadow-lg z-50 rounded-b-2xl text-center">
+                        <x-about-link> За Крик </x-about-link>
+                        <x-about-link> Нашиот Тим </x-about-link>
+                        <x-about-link> Волонтери </x-about-link>
+                        <x-about-link> Архива </x-about-link>
+                    </div>
+                </div>
+
                 <x-nav-link href="#">Услуги</x-nav-link>
                 <x-nav-link href="#">Проекти</x-nav-link>
                 <x-nav-link href="#">Контакт</x-nav-link>
                 <a href="#"
-                    class="text-font bg-dark-kirk hover:bg-purple py-2 text-[16px] font-normal rounded-2xl border-2 border-orange px-3">Донирај</a>
+                    class="text-font bg-dark-krik hover:bg-purple py-2 text-[16px] font-normal rounded-2xl border-2 border-orange px-3">Донирај</a>
             </div>
         </div>
 
@@ -88,18 +109,18 @@
                 <x-nav-link href="#">Проекти</x-nav-link>
                 <x-nav-link href="#">Контакт</x-nav-link>
                 <a href="#"
-                    class="text-font bg-dark-kirk hover:bg-purple py-2 text-[16px] font-normal rounded-2xl border-2 border-orange px-3">Донирај</a>
+                    class="text-font bg-dark-krik hover:bg-purple shadow-custom text-[16px] font-normal rounded-3xl border-2 border-orange px-3">Донирај</a>
             </div>
         </div>
     </nav>
 
 
-    <main>
+    <main class="flex-grow">
         {{ $slot }}
     </main>
 
-
-    <x-footer /> {{-- Include the footer component here --}}
+    <x-footer />
+    <script src="//unpkg.com/alpinejs" defer></script>
 </body>
 
 </html>
