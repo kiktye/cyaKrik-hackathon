@@ -9,7 +9,8 @@
 
             <!-- Newsletter Text -->
             <div class="text-shadowed font-normal leading-7 tracking-wider text-md lg:text-lg lg:w-1/3">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit adipisicing elit adipisicing elit consectetur
+                <p class="text-pretty">Lorem ipsum dolor sit amet consectetur adipisicing elit adipisicing elit
+                    adipisicing elit consectetur
                     adipisicing elita elit.</p>
             </div>
 
@@ -25,7 +26,7 @@
             <div class="bg-white my-10 h-px w-full"></div>
         </div>
 
-        <!-- Bottom Section for Additional Links and Contacts -->
+
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 w-full md:w-[90%] mx-auto pt-5">
             <!-- Contact Us -->
             <div class="flex flex-col space-y-4">
@@ -35,14 +36,15 @@
                         class="bg-transparent border-2 border-white py-3 pl-3 pr-6 rounded-3xl placeholder:text-white/70 placeholder:text-lg lg:placeholder:text-xl placeholder:tracking-wider placeholder:font-mulish">
                     <input type="email" placeholder="Вашата Емаил Адреса"
                         class="bg-transparent border-2 border-white py-3 pl-3 pr-6 rounded-3xl placeholder:text-white/70 placeholder:text-lg lg:placeholder:text-xl placeholder:tracking-wider placeholder:font-mulish">
-                    <button class="bg-orange font-bold py-3 px-20 lg:px-56 rounded-3xl">CTA</button>
+                    <button class="bg-orange font-bold py-3 px-20 rounded-3xl">CTA</button>
                 </div>
             </div>
 
             <!-- Join Us -->
             <div class="flex flex-col space-y-6">
                 <h2 class="text-xl lg:text-2xl font-bold mb-2">Приклучи се</h2>
-                <p class="w-full lg:w-[70%] mb-2 text-shadowed font-normal tracking-wide text-sm">Lorem ipsum dolor sit
+                <p class="w-full lg:w-[70%] mb-2 text-shadowed font-normal tracking-wide text-sm text-pretty">Lorem
+                    ipsum dolor sit
                     amet,
                     consectetur adipiscing elit. Phasellus nec iaculis mauris. Lorem ipsum dolor sit amet,
                     consectetur adipiscing elit. Phasellus nec iaculis mauris. </p>
