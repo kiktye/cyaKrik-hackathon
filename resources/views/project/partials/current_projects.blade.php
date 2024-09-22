@@ -1,12 +1,34 @@
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+@php
+    $bgColors = ['bg-orange', 'bg-why', 'bg-dark-krik'];
+@endphp
+
+<div class="grid grid-cols-4 grid-rows-2 gap-4 font-mulish h-[500px] w-[90%] mx-auto">
     @foreach ($currentProjects as $project)
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-            <img src="{{ asset($project->image_url) }}" class="w-full h-48 object-cover" alt="{{ $project->name }}">
-            <div class="p-4">
-                <h3 class="text-xl font-bold">{{ $project->name }}</h3>
-                <a href="{{ route('project.show', $project->id) }}" class="text-orange-500 mt-2 inline-block">Види повеќе (See more)</a>
+        @php
+            // Cycle through the colors array
+            $bgColor = $bgColors[$loop->index % count($bgColors)];
+        @endphp
+
+        @if ($loop->index == 0)
+            <!-- Big card on the left (spans 2 rows) -->
+            <div class="col-span-2 row-span-2 relative">
+                <x-project-card :project="$project" :bgColor="$bgColor" />
             </div>
-        </div>
+        @elseif ($loop->index == 1)
+            <!-- Horizontal card on the top right (spans 1 row) -->
+            <div class="col-span-2 row-span-1 relative">
+                <x-project-card :project="$project" :bgColor="$bgColor" />
+            </div>
+        @elseif ($loop->index == 2)
+            <!-- Two smaller cards on the bottom right (each spans 1/2 row) -->
+            <div class="col-span-1 row-span-1 relative">
+                <x-project-card :project="$project" :bgColor="$bgColor" />
+            </div>
+        @elseif ($loop->index == 3)
+            <div class="col-span-1 row-span-1 relative">
+                <x-project-card :project="$project" :bgColor="$bgColor" />
+            </div>
+        @endif
     @endforeach
 </div>
 

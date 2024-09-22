@@ -25,14 +25,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-        <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="flex flex-col min-h-screen">
 
-    <div class="font-montserrat bg-dark-krik text-shadowed py-2.5 md:py-1.5 shadow-hover">
+    <div class="font-mulish bg-dark-krik text-shadowed py-2.5 md:py-1.5 shadow-hover">
         <div class=" hidden md:flex w-[80%] mx-auto justify-between items-center">
 
             <div class="flex space-x-[60px] items-center">
@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    <nav class="bg-orange py-2 relative z-20">
+    <nav class="bg-orange py-2 relative z-20 font-montserrat">
         <div class="w-[80%] mx-auto flex justify-between items-center">
             <!-- Logo -->
             <div class="w-[3.5rem] h-[3.5rem] md:w-[4.2rem] md:h-[4.2rem]">
@@ -95,10 +95,10 @@
                 </div>
 
                 <x-nav-link href="#">Услуги</x-nav-link>
-                <x-nav-link href="#">Проекти</x-nav-link>
+                <x-nav-link href="{{ route('projects.index') }}">Проекти</x-nav-link>
                 <x-nav-link href="#">Контакт</x-nav-link>
                 <a href="#"
-                    class="text-font bg-dark-krik hover:bg-purple py-2 text-[16px] font-normal rounded-2xl border-2 border-orange px-3">Донирај</a>
+                    class="text-font bg-dark-krik hover:bg-why py-2 text-[16px] font-normal rounded-2xl border-2 border-orange px-3">Донирај</a>
             </div>
         </div>
 
@@ -128,7 +128,7 @@
                     </div>
                 </div>
                 <x-nav-link href="#">Услуги</x-nav-link>
-                <x-nav-link href="#">Проекти</x-nav-link>
+                <x-nav-link href=" {{ route('projects.index') }} ">Проекти</x-nav-link>
                 <x-nav-link href="#">Контакт</x-nav-link>
                 <a href="#"
                     class="text-font bg-dark-krik hover:bg-purple shadow-custom text-[16px] font-normal rounded-3xl border-2 border-orange px-3">Донирај</a>

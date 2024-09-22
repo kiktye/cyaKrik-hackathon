@@ -12,7 +12,7 @@ class ProjectController extends Controller
     {
         // Fetch current and completed projects
         $currentProjects = Project::where('status', 'in_progress')->paginate(6);  // 6 per page
-        $completedProjects = Project::where('status', 'completed')->paginate(6);  // 6 per page
+        $completedProjects = Project::where('status', 'completed')->paginate(8);  // 6 per page
 
 
 

@@ -1,13 +1,77 @@
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    @foreach ($completedProjects as $project)
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-            <img src="{{ asset($project->image_url) }}" class="w-full h-48 object-cover" alt="{{ $project->name }}">
-            <div class="p-4">
-                <h3 class="text-xl font-bold">{{ $project->name }}</h3>
-                <a href="{{ route('project.show', $project->id) }}" class="text-orange-500 mt-2 inline-block">Види повеќе (See more)</a>
-            </div>
+@php
+    $bgColors = ['bg-orange', 'bg-why', 'bg-dark-krik'];
+@endphp
+
+<div class="w-[90%] mx-auto font-mulish">
+    <!-- First Section -->
+    <div class="grid grid-cols-4 grid-rows-2 gap-4 h-[600px] mb-4">
+        @foreach ($completedProjects as $index => $project)
+            @php
+                $bgColor = $bgColors[$index % count($bgColors)];
+            @endphp
+
+            @if ($index == 0)
+                <!-- Vertical card in the first column spanning 2 rows -->
+                <div class="col-span-1 row-span-2 relative hover:border hover:border-dark-krik hover:rounded-3xl">
+                    <a href="{{ route('project.show', $project->id) }}">
+                        <x-project-card :project="$project" :bgColor="$bgColor" />
+                    </a>
+                </div>
+            @elseif ($index == 1)
+                <!-- First small card (top) in the second column -->
+                <div class="col-span-1 row-span-1 relative hover:border hover:border-dark-krik hover:rounded-3xl">
+                    <a href="{{ route('project.show', $project->id) }}">
+                        <x-project-card :project="$project" :bgColor="$bgColor" />
+                    </a>
+                </div>
+            @elseif ($index == 2)
+                <!-- Second small card (bottom) in the second column -->
+                <div class="col-span-1 row-span-1 relative hover:border hover:border-dark-krik hover:rounded-3xl">
+                    <a href="{{ route('project.show', $project->id) }}">
+                        <x-project-card :project="$project" :bgColor="$bgColor" />
+                    </a>
+                </div>
+            @elseif ($index == 3)
+                <!-- Big card spanning the third and fourth columns and 2 rows -->
+                <div class="col-span-2 row-span-2 relative hover:border hover:border-dark-krik hover:rounded-3xl">
+                    <a href="{{ route('project.show', $project->id) }}">
+                        <x-project-card :project="$project" :bgColor="$bgColor" />
+                    </a>
+                </div>
+
+    </div>
+
+    <!-- Second Section -->
+    <div class="grid grid-cols-4 grid-rows-2 gap-4 h-[500px]">
+    @elseif ($index == 4)
+        <!-- Second Section: Big card on the left (spans 2 rows) -->
+        <div class="col-span-2 row-span-2 relative hover:border hover:border-dark-krik hover:rounded-3xl">
+            <a href="{{ route('project.show', $project->id) }}">
+                <x-project-card :project="$project" :bgColor="$bgColor" />
+            </a>
         </div>
-    @endforeach
+    @elseif ($index == 5)
+        <!-- Second Section: Horizontal card on the top right (spans 1 row) -->
+        <div class="col-span-2 row-span-1 relative hover:border hover:border-dark-krik hover:rounded-3xl">
+            <a href="{{ route('project.show', $project->id) }}">
+                <x-project-card :project="$project" :bgColor="$bgColor" />
+            </a>
+        </div>
+    @elseif ($index == 6)
+        <div class="col-span-1 row-span-1 relative hover:border hover:border-dark-krik hover:rounded-3xl">
+            <a href="{{ route('project.show', $project->id) }}">
+                <x-project-card :project="$project" :bgColor="$bgColor" />
+            </a>
+        </div>
+    @elseif ($index == 7)
+        <div class="col-span-1 row-span-1 relative hover:border hover:border-dark-krik hover:rounded-3xl">
+            <a href="{{ route('project.show', $project->id) }}">
+                <x-project-card :project="$project" :bgColor="$bgColor" />
+            </a>
+        </div>
+        @endif
+        @endforeach
+    </div>
 </div>
 
 <!-- Pagination for Completed Projects -->
