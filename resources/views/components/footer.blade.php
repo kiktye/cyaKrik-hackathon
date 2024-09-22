@@ -1,4 +1,4 @@
-<footer class="bg-dark-krik text-white p-10 rounded-t-lg2 w-full font-mulish">
+<footer id="footer-section" class="bg-dark-krik text-white p-10 rounded-t-lg2 w-full font-mulish" >
     <div class="w-[85%] mx-auto my-5">
         <!-- Top Section for Newsletter -->
         <div

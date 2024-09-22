@@ -87,7 +87,7 @@
                     <div x-show="open" @mouseleave="open = false" @mouseenter="clearTimeout(timeout)"
                         @mouseleave="timeout = setTimeout(() => open = false, 10)"
                         class="absolute right-0 w-full bg-dark-krik shadow-lg z-50 rounded-b-2xl text-center">
-                        <x-about-link> За Крик </x-about-link>
+                        <x-about-link href="{{ route('about.index') }}"> За Крик </x-about-link>
                         <x-about-link> Нашиот Тим </x-about-link>
                         <x-about-link href="{{ route('volunteer.index') }}"> Волонтери </x-about-link>
                         <x-about-link> Архива </x-about-link>
@@ -96,7 +96,7 @@
 
                 <x-nav-link href="#">Услуги</x-nav-link>
                 <x-nav-link href="{{ route('projects.index') }}">Проекти</x-nav-link>
-                <x-nav-link href="#">Контакт</x-nav-link>
+                <x-nav-link href="#footer-section">Контакт</x-nav-link>
                 <a href="#"
                     class="text-font bg-dark-krik hover:bg-why py-2 text-[16px] font-normal rounded-2xl border-2 border-orange px-3">Донирај</a>
             </div>
@@ -121,7 +121,7 @@
                     <div x-show="open" @mouseleave="open = false" @mouseenter="clearTimeout(timeout)"
                         @mouseleave="timeout = setTimeout(() => open = false, 10)"
                         class="absolute right-0 w-full bg-dark-krik shadow-lg z-50 rounded-b-2xl text-center">
-                        <x-about-link> За Крик </x-about-link>
+                        <x-about-link href="{{ route('about.index') }}"> За Крик </x-about-link>
                         <x-about-link> Нашиот Тим </x-about-link>
                         <x-about-link href="{{ route('volunteer.index') }}"> Волонтери </x-about-link>
                         <x-about-link> Архива </x-about-link>
@@ -129,7 +129,7 @@
                 </div>
                 <x-nav-link href="#">Услуги</x-nav-link>
                 <x-nav-link href=" {{ route('projects.index') }} ">Проекти</x-nav-link>
-                <x-nav-link href="#">Контакт</x-nav-link>
+                <x-nav-link href="#footer-section">Контакт</x-nav-link>
                 <a href="#"
                     class="text-font bg-dark-krik hover:bg-purple shadow-custom text-[16px] font-normal rounded-3xl border-2 border-orange px-3">Донирај</a>
             </div>
@@ -145,6 +145,7 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     {{ $scripts ?? '' }}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
 </body>
 
 </html>

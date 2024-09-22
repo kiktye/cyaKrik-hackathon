@@ -41,8 +41,8 @@
         </div>
 
         <!-- Sign Up Section -->
-        <div class="mt-8">
-            <h3 class="text-xl font-bold mb-2">Пријави се (Sign Up)</h3>
+        <div class="mt-8 flex justify-end">
+            <h3 class="text-xl font-bold mb-2">Пријави се</h3>
             <a href="#" class="bg-black text-white px-4 py-2 border rounded-lg">Sign In</a>
         </div>
 
