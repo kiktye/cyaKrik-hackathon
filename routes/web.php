@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VolunteerController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\AboutUSController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +34,8 @@ Route::get('/project', [ProjectController::class, 'index'])->name('projects.inde
 Route::get('/project/{id}', [ProjectController::class, 'show'])->name('project.show');
 
 // Project Controllers
+
+// About Us Controllers 
+Route::get('/about-us', [AboutUsController::class, 'index'])->name('about.index');
+
+// About Us Controllers 
