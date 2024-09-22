@@ -1,6 +1,6 @@
 <x-layout>
     <div class="bg-no-repeat bg-left bg-auto md:bg-cover h-screen"
-        style="background-image: url({{ Vite::asset('resources/CyaKrik-Resources/Homepage/herosection.jpg') }})">
+        style="background-image: url('{{ Vite::asset('resources/CyaKrik-Resources/Homepage/herosection.jpg') }}')">
 
         <div class="flex flex-col space-y-8 justify-center items-center h-[90%]">
             <div class="text-xl md:text-5xl font-bold font-montserrat tracking-wide uppercase mb-16 md:mb-[125px]">

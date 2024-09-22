@@ -139,8 +139,10 @@
 
     <main class="flex-grow">
         {{ $slot }}
+        <!-- Accessibility Widget -->
+        
     </main>
-
+    @include('components.accessibility-widget') <!-- Include the widget here -->
     <x-footer />
     <script src="//unpkg.com/alpinejs" defer></script>
     {{ $scripts ?? '' }}
