@@ -16,7 +16,7 @@
                     Центарот за младински активизам Крик е невладина, непрофитна организација основана од млади луѓе,
                     предводена од млади луѓе и работи за и со млади луѓе.
                 </article>
-                <a href="#"
+                <a href="{{ route('about.index') }}"
                     class="bg-why mt-5 text-lg sm:text-xl font-bold py-3 px-20 sm:px-32 capitalize text-montserrat rounded-3xl place-self-center">
                     Повеќе за нас
                 </a>
